@@ -1,9 +1,9 @@
 package http_proxy_middleware
 
 import (
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/middleware"
 )
 
 //匹配接入方式 基于请求信息

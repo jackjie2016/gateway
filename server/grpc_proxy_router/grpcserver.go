@@ -2,10 +2,10 @@ package grpc_proxy_router
 
 import (
 	"fmt"
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/grpc_proxy_middleware"
-	"github.com/e421083458/go_gateway/reverse_proxy"
 	"github.com/e421083458/grpc-proxy/proxy"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/grpc_proxy_middleware"
+	"github.com/jackjie2016/gateway/server/reverse_proxy"
 	"google.golang.org/grpc"
 	"log"
 	"net"

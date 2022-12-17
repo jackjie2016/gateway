@@ -2,11 +2,11 @@ package middleware
 
 import (
 	"fmt"
-	"github.com/e421083458/go_gateway/public"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/locales/en"
 	"github.com/go-playground/locales/zh"
 	"github.com/go-playground/universal-translator"
+	"github.com/jackjie2016/gateway/server/public"
 	"gopkg.in/go-playground/validator.v9"
 	en_translations "gopkg.in/go-playground/validator.v9/translations/en"
 	zh_translations "gopkg.in/go-playground/validator.v9/translations/zh"

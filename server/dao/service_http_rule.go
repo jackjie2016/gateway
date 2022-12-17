@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"github.com/e421083458/go_gateway/public"
 	"github.com/e421083458/gorm"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/public"
 )
 
 type HttpRule struct {

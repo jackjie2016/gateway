@@ -1,8 +1,8 @@
 package public
 
 import (
-	"github.com/e421083458/go_gateway/golang_common/lib"
 	"github.com/garyburd/redigo/redis"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
 )
 
 func RedisConfPipline(pip ...func(c redis.Conn)) error {
@@ -21,7 +21,7 @@ func RedisConfPipline(pip ...func(c redis.Conn)) error {
 func RedisConfDo(commandName string, args ...interface{}) (interface{}, error) {
 	c, err := lib.RedisConnFactory("default")
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	defer c.Close()
 	return c.Do(commandName, args...)

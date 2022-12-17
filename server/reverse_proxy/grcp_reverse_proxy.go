@@ -2,8 +2,8 @@ package reverse_proxy
 
 import (
 	"context"
-	"github.com/e421083458/go_gateway/reverse_proxy/load_balance"
 	"github.com/e421083458/grpc-proxy/proxy"
+	"github.com/jackjie2016/gateway/server/reverse_proxy/load_balance"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"log"

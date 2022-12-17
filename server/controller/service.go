@@ -2,12 +2,12 @@ package controller
 
 import (
 	"fmt"
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/dto"
-	"github.com/e421083458/go_gateway/middleware"
-	"github.com/e421083458/go_gateway/public"
-	"github.com/e421083458/go_gateway/golang_common/lib"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/dto"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
+	"github.com/jackjie2016/gateway/server/middleware"
+	"github.com/jackjie2016/gateway/server/public"
 	"github.com/pkg/errors"
 	"strings"
 	"time"
@@ -235,18 +235,18 @@ func (service *ServiceController) ServiceStat(c *gin.Context) {
 		return
 	}
 	todayList := []int64{}
-	currentTime:= time.Now()
+	currentTime := time.Now()
 	for i := 0; i <= currentTime.Hour(); i++ {
-		dateTime:=time.Date(currentTime.Year(),currentTime.Month(),currentTime.Day(),i,0,0,0,lib.TimeLocation)
-		hourData,_:=counter.GetHourData(dateTime)
+		dateTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), i, 0, 0, 0, lib.TimeLocation)
+		hourData, _ := counter.GetHourData(dateTime)
 		todayList = append(todayList, hourData)
 	}
 
 	yesterdayList := []int64{}
-	yesterTime:= currentTime.Add(-1*time.Duration(time.Hour*24))
+	yesterTime := currentTime.Add(-1 * time.Duration(time.Hour*24))
 	for i := 0; i <= 23; i++ {
-		dateTime:=time.Date(yesterTime.Year(),yesterTime.Month(),yesterTime.Day(),i,0,0,0,lib.TimeLocation)
-		hourData,_:=counter.GetHourData(dateTime)
+		dateTime := time.Date(yesterTime.Year(), yesterTime.Month(), yesterTime.Day(), i, 0, 0, 0, lib.TimeLocation)
+		hourData, _ := counter.GetHourData(dateTime)
 		yesterdayList = append(yesterdayList, hourData)
 	}
 	middleware.ResponseSuccess(c, &dto.ServiceStatOutput{

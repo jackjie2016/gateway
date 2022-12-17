@@ -2,8 +2,8 @@ package tcp_proxy_middleware
 
 import (
 	"fmt"
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/public"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/public"
 	"strings"
 )
 
@@ -24,7 +24,7 @@ func TCPWhiteListMiddleware() func(c *TcpSliceRouterContext) {
 		}
 
 		iplist := []string{}
-		if serviceDetail.AccessControl.WhiteList!=""{
+		if serviceDetail.AccessControl.WhiteList != "" {
 			iplist = strings.Split(serviceDetail.AccessControl.WhiteList, ",")
 		}
 		if serviceDetail.AccessControl.OpenAuth == 1 && len(iplist) > 0 {

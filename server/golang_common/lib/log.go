@@ -2,7 +2,7 @@ package lib
 
 import (
 	"fmt"
-	dlog "github.com/e421083458/go_gateway/golang_common/log"
+	dlog "github.com/jackjie2016/gateway/server/golang_common/log"
 	"strings"
 )
 

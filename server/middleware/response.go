@@ -3,8 +3,8 @@ package middleware
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/e421083458/go_gateway/golang_common/lib"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
 	"strings"
 )
 

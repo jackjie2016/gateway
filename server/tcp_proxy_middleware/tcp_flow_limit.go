@@ -2,8 +2,8 @@ package tcp_proxy_middleware
 
 import (
 	"fmt"
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/public"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/public"
 	"strings"
 )
 
@@ -27,7 +27,7 @@ func TCPFlowLimitMiddleware() func(c *TcpSliceRouterContext) {
 				return
 			}
 			if !serviceLimiter.Allow() {
-				c.conn.Write([]byte(fmt.Sprintf("service flow limit %v", serviceDetail.AccessControl.ServiceFlowLimit), ))
+				c.conn.Write([]byte(fmt.Sprintf("service flow limit %v", serviceDetail.AccessControl.ServiceFlowLimit)))
 				c.Abort()
 				return
 			}
@@ -48,7 +48,7 @@ func TCPFlowLimitMiddleware() func(c *TcpSliceRouterContext) {
 				return
 			}
 			if !clientLimiter.Allow() {
-				c.conn.Write([]byte(fmt.Sprintf("%v flow limit %v", clientIP, serviceDetail.AccessControl.ClientIPFlowLimit), ))
+				c.conn.Write([]byte(fmt.Sprintf("%v flow limit %v", clientIP, serviceDetail.AccessControl.ClientIPFlowLimit)))
 				c.Abort()
 				return
 			}

@@ -2,12 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/e421083458/go_gateway/dao"
-	"github.com/e421083458/go_gateway/golang_common/lib"
-	"github.com/e421083458/go_gateway/grpc_proxy_router"
-	"github.com/e421083458/go_gateway/http_proxy_router"
-	"github.com/e421083458/go_gateway/router"
-	"github.com/e421083458/go_gateway/tcp_proxy_router"
+	"github.com/jackjie2016/gateway/server/dao"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
+	"github.com/jackjie2016/gateway/server/grpc_proxy_router"
+	"github.com/jackjie2016/gateway/server/http_proxy_router"
+	"github.com/jackjie2016/gateway/server/router"
+	"github.com/jackjie2016/gateway/server/tcp_proxy_router"
 	"os"
 	"os/signal"
 	"syscall"

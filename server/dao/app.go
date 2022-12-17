@@ -1,11 +1,11 @@
 package dao
 
 import (
-	"github.com/e421083458/go_gateway/dto"
-	"github.com/e421083458/go_gateway/public"
-	"github.com/e421083458/go_gateway/golang_common/lib"
 	"github.com/e421083458/gorm"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/dto"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
+	"github.com/jackjie2016/gateway/server/public"
 	"net/http/httptest"
 	"sync"
 	"time"
@@ -88,7 +88,6 @@ func NewAppManager() *AppManager {
 		init:     sync.Once{},
 	}
 }
-
 
 func (s *AppManager) GetAppList() []*App {
 	return s.AppSlice

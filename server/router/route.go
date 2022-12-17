@@ -1,12 +1,12 @@
 package router
 
 import (
-	"github.com/e421083458/go_gateway/controller"
-	"github.com/e421083458/go_gateway/docs"
-	"github.com/e421083458/go_gateway/middleware"
-	"github.com/e421083458/go_gateway/golang_common/lib"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
+	"github.com/jackjie2016/gateway/server/controller"
+	"github.com/jackjie2016/gateway/server/docs"
+	"github.com/jackjie2016/gateway/server/golang_common/lib"
+	"github.com/jackjie2016/gateway/server/middleware"
 	"github.com/swaggo/files"
 	"github.com/swaggo/gin-swagger"
 	"log"
@@ -121,7 +121,6 @@ func InitRouter(middlewares ...gin.HandlerFunc) *gin.Engine {
 	{
 		controller.APPRegister(appRouter)
 	}
-
 
 	dashRouter := router.Group("/dashboard")
 	dashRouter.Use(
